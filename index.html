@@ -4,64 +4,121 @@
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
   <title>Delicious Bites Menu</title>
-</head>
-<body>   
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      transition: background 0.5s ease-in-out;
+    }
 
-  <h1>Delicious Bites Menu</h1>
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      margin: auto;
+      bottom: -5px;
+      left: 0;
+      background-color: #ff9800;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+      visibility: visible;
+      width: 100%;
+    }
+
+    .menu-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .contact-btn {
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="body">   
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#appetizers" class="nav-link">Appetizers</a></li>
+      <li class="nav-item"><a href="#main-courses" class="nav-link">Main Courses</a></li>
+      <li class="nav-item"><a href="#desserts" class="nav-link">Desserts</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="page-title">Delicious Bites Menu</h1>
 
   <!-- Appetizers Section -->
-  <h2>Appetizers</h2>  
-  <ul>     
-    <li>
-      <strong>Caprese Salad</strong>       
-      <p>Fresh tomatoes, mozzarella, and basil drizzled with balsamic glaze.</p> 
+  <h2 id="appetizers" class="section-title">Appetizers</h2>  
+  <ul class="menu-list">     
+    <li class="menu-item">
+      <strong class="menu-item-title">Caprese Salad</strong>       
+      <p class="menu-item-desc">Fresh tomatoes, mozzarella, and basil drizzled with balsamic glaze.</p> 
     </li>    
-    <li>
-      <strong>Garlic Breadsticks</strong>
-      <p>Warm, oven-baked breadsticks brushed with garlic butter and parmesan cheese.</p>
+    <li class="menu-item">
+      <strong class="menu-item-title">Garlic Breadsticks</strong>
+      <p class="menu-item-desc">Warm, oven-baked breadsticks brushed with garlic butter and parmesan cheese.</p>
     </li>
-    <li>
-      <strong>Stuffed Mushrooms</strong>
-      <p>Button mushrooms filled with creamy cheese, herbs, and breadcrumbs.</p>
+    <li class="menu-item">
+      <strong class="menu-item-title">Stuffed Mushrooms</strong>
+      <p class="menu-item-desc">Button mushrooms filled with creamy cheese, herbs, and breadcrumbs.</p>
     </li>
   </ul>  
 
   <!-- Main Courses Section -->
-  <h2>Main Courses</h2> 
-  <ul>   
-    <li>      
-      <strong>Grilled Salmon</strong>     
-      <p>Salmon fillet seasoned and grilled to perfection, served with lemon butter sauce.</p>   
+  <h2 id="main-courses" class="section-title">Main Courses</h2> 
+  <ul class="menu-list">   
+    <li class="menu-item">      
+      <strong class="menu-item-title">Grilled Salmon</strong>     
+      <p class="menu-item-desc">Salmon fillet seasoned and grilled to perfection, served with lemon butter sauce.</p>   
     </li>     
-    <li>
-      <strong>Classic Margherita Pizza</strong>
-      <p>Wood-fired pizza topped with fresh mozzarella, tomatoes, and basil leaves.</p>
+    <li class="menu-item">
+      <strong class="menu-item-title">Classic Margherita Pizza</strong>
+      <p class="menu-item-desc">Wood-fired pizza topped with fresh mozzarella, tomatoes, and basil leaves.</p>
     </li>
-    <li>
-      <strong>Herb-Crusted Chicken</strong>
-      <p>Juicy chicken breast coated with fresh herbs, served with roasted vegetables.</p>
+    <li class="menu-item">
+      <strong class="menu-item-title">Herb-Crusted Chicken</strong>
+      <p class="menu-item-desc">Juicy chicken breast coated with fresh herbs, served with roasted vegetables.</p>
     </li>
   </ul>   
 
   <!-- Desserts Section -->
-  <h2>Desserts</h2>  
-  <ul>     
-    <li>    
-      <strong>Chocolate Fondue</strong>     
-      <p>Assorted fruits and marshmallows served with rich chocolate fondue.</p>    
+  <h2 id="desserts" class="section-title">Desserts</h2>  
+  <ul class="menu-list">     
+    <li class="menu-item">    
+      <strong class="menu-item-title">Chocolate Fondue</strong>     
+      <p class="menu-item-desc">Assorted fruits and marshmallows served with rich chocolate fondue.</p>    
     </li>    
-    <li>
-      <strong>New York Cheesecake</strong>
-      <p>Creamy classic cheesecake topped with fresh strawberries.</p>
+    <li class="menu-item">
+      <strong class="menu-item-title">New York Cheesecake</strong>
+      <p class="menu-item-desc">Creamy classic cheesecake topped with fresh strawberries.</p>
     </li>
-    <li>
-      <strong>Tiramisu</strong>
-      <p>Layers of espresso-soaked ladyfingers with mascarpone cream and cocoa.</p>
+    <li class="menu-item">
+      <strong class="menu-item-title">Tiramisu</strong>
+      <p class="menu-item-desc">Layers of espresso-soaked ladyfingers with mascarpone cream and cocoa.</p>
     </li>
   </ul> 
 
   <!-- Contact Link -->
-  <p><a href="contact.html">Contact us for reservations</a></p> 
+  <p><a href="contact.html" class="contact-btn">Contact us for reservations</a></p> 
 
 </body>
 </html>
